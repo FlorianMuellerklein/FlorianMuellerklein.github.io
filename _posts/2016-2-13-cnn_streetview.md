@@ -8,13 +8,13 @@ The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-starte
 
 Convolution neural networks have been the state of the art in computer vision since 2012. There are slight changes to network architectures and data processing being made all the time. These changes have been steadily increasing the performance of image classification since CNNs have gotten popular. This is a VGG style convolution neural network with heavy data augmentation for the case sensitive character recognition Chars74k dataset. Currently gets 83.3% on holdout validation dataset of 6,220 images and gets [first place](https://www.kaggle.com/c/street-view-getting-started-with-julia/leaderboard) on the Kaggle leaderboards.
 
-### Architecture
+## Architecture
 
 The input are 64 x 64 greyscale images
 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. 2 hidden layers with dropout. Softmax output.
 
 | Layer Type | Parameters |
-| -----------|----------- |
+| :----------|----------: |
 | Input      | size: 64x64, channel: 1 |
 | convolution| kernel: 3x3, channel: 128 |
 | ReLU |  |
@@ -39,11 +39,11 @@ The input are 64 x 64 greyscale images
 | dropout | 0.5 |
 | softmax | units: 62 |
 
-### Training Algorithm
+## Training Algorithm
 
 The nework was trained with stochastic gradient descent (SGD) and Nesterov momentum fixed at 0.9. Training was done in 300 iterations with an initial learning rate of 0.03, after 250 epochs the learning rate was dropped to 0.003 and then dropped again to 0.0003 after 275 epochs. This allowed the network to fine-tune itself with smaller updates once the classification accuracy got very high.
 
-### Data augmentation
+## Data augmentation
 
 One of the drawbacks to how powerful deep learning can be is that the networks are very prone to overfitting. These data augmentation techniques are a great way to deal with that. Data augmentation allows the network to 'see' each image in different ways which in turn allows the network to have a much more flexible 'understanding' of each class of image. In this dataset, where the images are taken from the google streetview car and text on signs can come in any size and font it is especially important for the network to be flexible.
 
