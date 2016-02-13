@@ -19,18 +19,18 @@ The input are 64 x 64 greyscale images
 | Input | 1 | 64x64 |
 | Convolution | 128 | 3x3 |
 | Convolution | 128 | 3x3 |
-| Max pool | __ | 2x2 |
+| Max pool | - | 2x2 |
 | Convolution | 256 | 3x3 |
 | Convolution | 256 | 3x3 |
-| Max pool | __ | 2x2 |
+| Max pool | - | 2x2 |
 | Convolution| 512 | 3x3 |
 | Convolution | 512 | 3x3 |
-| Max pool | __ | 2x2 |
-| Fully connected | 2048 | __ |
+| Max pool | - | 2x2 |
+| Fully connected | 2048 | - |
 | Dropout | 2048 | 0.5 |
-| Fully connected | 2048 | __ |
+| Fully connected | 2048 | - |
 | Dropout | 2048 | 0.5 |
-| Softmax | 62 | _______________ |
+| Softmax | 62 | - |
 
 
 ## Training Algorithm
