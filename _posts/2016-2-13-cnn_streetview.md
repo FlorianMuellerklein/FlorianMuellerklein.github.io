@@ -51,6 +51,7 @@ Images are randomly transformed 'on the fly' while they are being prepared in ea
 * Sobel edge detector applied to 1/4 of images.
 
 On the left is the original image, on the right are possible variations that the network can receive as input.
+
 <center>
 
 ![Imgur](http://i.imgur.com/vNkJrKi.png)![Imgur](http://i.imgur.com/0G8Khxv.gif)
