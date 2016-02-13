@@ -16,7 +16,7 @@ The input are 64 x 64 greyscale images
 
 | __Layer Type__ | __Channels__ | __Parameters__ |
 | :---: | :---: | :---: |
-| Input      | 1 | 64x64 |
+| Input | 1 | 64x64 |
 | convolution | 128 | 3x3 |
 | convolution | 128 | 3x3 |
 | max pool | | 2x2 |
