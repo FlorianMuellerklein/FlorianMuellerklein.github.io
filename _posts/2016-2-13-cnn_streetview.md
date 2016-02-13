@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using convolution neural networks to read street signs
+title: Using deep learning to read street signs
 published: True
 ---
 
