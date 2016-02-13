@@ -18,25 +18,25 @@ The input are 64 x 64 greyscale images
 | :--- | :---: | :---: |
 | Input      | 1 | 64x64 |
 | convolution | 128 | 3x3 |
-| ReLU |  |
+| ReLU |  | |
 | convolution | 128 | 3x3 |
-| ReLU | |
+| ReLU | | |
 | max pool | | 2x2 |
 | convolution | 256 | 3x3 |
-| ReLU |  |
+| ReLU |  | |
 | convolution | 256 | 3x3 |
-| ReLU |  |
+| ReLU |  | |
 | max pool | | 2x2 |
 | convolution| 512 | 3x3 |
-| ReLU |  |
+| ReLU |  | |
 | convolution | 512 | 3x3 |
-| ReLU |  |
+| ReLU |  | |
 | max pool | | 2x2 |
 | fully connected | 2048 | |
-| ReLU |  |
+| ReLU |  | |
 | dropout | 2048 | 0.5 |
 | fully connected | 2048 | |
-| ReLU |  |
+| ReLU |  | |
 | dropout | 2048 | 0.5 |
 | softmax | 62 | |
 
