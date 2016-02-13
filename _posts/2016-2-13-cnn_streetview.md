@@ -14,7 +14,7 @@ The input are 64 x 64 greyscale images
 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. 2 hidden layers with dropout. Softmax output.
 
 
-| __Layer Type__ | __Channels__ | __Parameters__ |
+| __Layer Type__ | __Channels__ | __Params__ |
 | :---: | :---: | :---: |
 | Input | 1 | 64x64 |
 | convolution | 128 | 3x3 |
