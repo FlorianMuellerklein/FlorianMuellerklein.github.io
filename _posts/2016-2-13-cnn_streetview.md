@@ -30,7 +30,7 @@ The input are 64 x 64 greyscale images
 | Dropout | 2048 | 0.5 |
 | Fully connected | 2048 | __ |
 | Dropout | 2048 | 0.5 |
-| Softmax | 62 | ________ |
+| Softmax | 62 | ___________ |
 
 
 ## Training Algorithm
