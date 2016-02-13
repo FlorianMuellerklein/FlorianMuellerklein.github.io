@@ -14,31 +14,31 @@ The input are 64 x 64 greyscale images
 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. 2 hidden layers with dropout. Softmax output.
 
 
-| <sub><sup>__Layer Type__</sup></sub> | <sub><sup>__Parameters__</sup></sub> |
-| :--- | ---: |
-| <sub><sup>Input</sup></sub>      | <sub><sup>size: 64x64, channel: 1</sup></sub> |
-| <sub><sup>convolution</sup></sub> | <sub><sup>kernel: 3x3, channel: 128</sup></sub> |
-| <sub><sup>ReLU</sup></sub> |  |
-| <sub><sup>convolution</sup></sub> | <sub><sup>kernel: 3x3, channel: 128</sup></sub> |
-| <sub><sup>ReLU</sup></sub> | |
-| <sub><sup>max pool</sup></sub> | <sub><sup>kernel: 2x2</sup></sub> |
-| <sub><sup>convolution</sup></sub> | <sub><sup>kernel: 3x3, channel: 256</sup></sub> |
-| <sub><sup>ReLU</sup></sub> |  |
-| <sub><sup>convolution</sup></sub> | <sub><sup>kernel: 3x3, channel: 256</sup></sub> |
-| <sub><sup>ReLU</sup></sub> |  |
-| <sub><sup>max pool</sup></sub> | <sub><sup>kernel: 2x2</sup></sub> |
-| <sub><sup>convolution| <sub><sup>kernel: 3x3, channel: 512 |
-| <sub><sup>ReLU</sup></sub> |  |
-| <sub><sup>convolution</sup></sub> | <sub><sup>kernel: 3x3, channel: 512</sup></sub> |
-| <sub><sup>ReLU</sup></sub> |  |
-| <sub><sup>max pool</sup></sub> | <sub><sup>kernel: 2x2</sup></sub> |
-| <sub><sup>fully connected</sup></sub> | <sub><sup>units: 2048</sup></sub> |
-| <sub><sup>ReLU</sup></sub> |  |
-| <sub><sup>dropout</sup></sub> | <sub><sup>0.5</sup></sub> |
-| <sub><sup>fully connected</sup></sub> | <sub><sup>units: 2048</sup></sub> |
-| <sub><sup>ReLU</sup></sub> |  |
-| <sub><sup>dropout</sup></sub> | <sub><sup>0.5</sup></sub> |
-| <sub><sup>softmax</sup></sub> | <sub><sup>units: 62</sup></sub> |
+| __Layer Type__ | __Channels__ |__Parameters__ |
+| :--- | :---: | ---: |
+| Input      | 1 | 64x64 |
+| convolution | 128 | 3x3 |
+| ReLU |  |
+| convolution | 128 | 3x3 |
+| ReLU | |
+| max pool | | 2x2 |
+| convolution | 256 | 3x3 |
+| ReLU |  |
+| convolution | 256 | 3x3 |
+| ReLU |  |
+| max pool | | 2x2 |
+| convolution| 512 | 3x3 |
+| ReLU |  |
+| convolution | 512 | 3x3 |
+| ReLU |  |
+| max pool | | 2x2 |
+| fully connected | 2048 | |
+| ReLU |  |
+| dropout | 0.5 | |
+| fully connected | 2048 | |
+| ReLU |  |
+| dropout | 0.5 | |
+| softmax | 62 | |
 
 
 ## Training Algorithm
