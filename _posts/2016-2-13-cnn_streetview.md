@@ -13,10 +13,9 @@ Convolution neural networks have been the state of the art in computer vision si
 The input are 64 x 64 greyscale images
 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. 2 hidden layers with dropout. Softmax output.
 
-<center>
 
 | __Layer Type__ | __Parameters__ |
-| :----------|----------: |
+| :--- | ---: |
 | Input      | size: 64x64, channel: 1 |
 | convolution| kernel: 3x3, channel: 128 |
 | ReLU |  |
@@ -41,7 +40,6 @@ The input are 64 x 64 greyscale images
 | dropout | 0.5 |
 | softmax | units: 62 |
 
-</center>
 
 ## Training Algorithm
 
