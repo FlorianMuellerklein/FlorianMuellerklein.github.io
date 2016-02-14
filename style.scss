@@ -21,6 +21,15 @@ body {
   background: $white;
   font: 18px/1.8 $helvetica;
   color: $darkGray;
+
+  a {
+    color: $darkGray;
+    text-decoration: underline;
+  	cursor: pointer;
+    &:hover, &:active {
+      color: $blue;
+    }
+  }
 }
 
 .container {
@@ -77,14 +86,6 @@ p {
   margin: 15px 0;
 }
 
-a {
-  color: $darkGray;
-  text-decoration: underline;
-	cursor: pointer;
-  &:hover, &:active {
-    color: $blue;
-  }
-}
 
 ul, ol {
   margin: 15px 0;
