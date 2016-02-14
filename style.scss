@@ -42,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
   color: $darkerGray;
   font-weight: bold;
+  text-decoration: none;
 
   line-height: 1.7;
   margin: 1em 0 15px;
@@ -77,7 +78,7 @@ p {
 }
 
 a {
-  color: $darkerGray;
+  color: $darkGray;
   text-decoration: underline;
 	cursor: pointer;
   &:hover, &:active {
@@ -200,6 +201,7 @@ img {
     float: none;
     display: block;
     margin: 0 auto;
+    text-decoration: none;
   }
 }
 
@@ -218,6 +220,7 @@ img {
   margin: -5px 0 0 0;
   color: $gray;
   font-size: 16px;
+  text-decoration: none;
 
   @include mobile {
     margin: 3px 0;
@@ -244,6 +247,7 @@ nav {
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
+    text-decoration: none;
 
     @include mobile {
       margin: 0 10px;
