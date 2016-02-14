@@ -25,7 +25,6 @@ body {
   a {
     color: $darkGray;
     text-decoration: underline;
-    border-bottom: 1px dotted #ba0000;
   	cursor: pointer;
     &:hover, &:active {
       color: $blue;
