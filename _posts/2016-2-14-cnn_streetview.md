@@ -11,7 +11,7 @@ The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-starte
 {: .center}
 ![chars74k](https://kaggle2.blob.core.windows.net/competitions/kaggle/3947/media/chars74k.jpg)
 
-<p style="text-align:center;">*Examples of images, taken from Kaggle and the Chars74k website*{: .center}</p>
+<p style="text-align:center; font-size:75%; font-style: italic;">Examples of images, taken from Kaggle and the Chars74k website</p>
 
 Convolution neural networks have been the top performers in computer vision since 2012. Changes to network architecture and data processing are being made all the time that are steadily increasing the performance of image classification. This network is inspired by the ImageNet winners of 2014. It is a [VGG](http://arxiv.org/abs/1409.1556) style convolution neural network with heavy data augmentation. They used 'networks of increasing depth using an architecture with very small (3x3) convolution filters'. On this dataset, pairing the VGG-style network with heavy data augmentation currently gets 83.3% on a holdout validation dataset of 6,220 images and [first place](https://www.kaggle.com/c/street-view-getting-started-with-julia/leaderboard) on the Kaggle leaderboards.
 
@@ -52,7 +52,7 @@ The network was trained with stochastic gradient descent (SGD) and Nesterov mome
 {: .center}
 ![training_plot](http://i.imgur.com/nFy2C3P.png)
 
-<p style="text-align:center;">*Training plot showing categorical cross entropy and percent correct on validation set*{: .center}</p>
+<p style="text-align:center; font-size:75%; font-style: italic;">Training plot showing categorical cross entropy and percent correct on validation set</p>
 
 
 ## Data augmentation
@@ -71,7 +71,7 @@ Images are randomly transformed 'on the fly' while they are being prepared in ea
 {: .center}
 ![Original](http://i.imgur.com/vNkJrKi.png)![Augmented](http://i.imgur.com/0G8Khxv.gif)
 
-<p style="text-align:center;">*On the left is the original image, on the right are possible variations that the network can receive as input.*{: .center}</p>
+<p style="text-align:center; font-size:75%; font-style: italic;">On the left is the original image, on the right are possible variations that the network can receive as input.</p>
 
 
 Here is the code for the data augmentation batch iterator. It mostly uses skimage for all of the image processing. For a great example on how to implement a similar batch iterator into a python neural network see Daniel Nouri's tutorial [here](http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/).
