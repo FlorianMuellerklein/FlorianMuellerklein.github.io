@@ -52,8 +52,8 @@ The network was trained with stochastic gradient descent (SGD) and Nesterov mome
 
 {: .center}
 ![training_plot](http://i.imgur.com/nFy2C3P.png)
-
-<center>*Training plot showing categorical cross entropy and percent correct on validation set*{: .center}
+<center>
+*Training plot showing categorical cross entropy and percent correct on validation set*{: .center}
 </center>
 
 ## Data augmentation
