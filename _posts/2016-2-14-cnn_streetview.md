@@ -10,7 +10,8 @@ The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-starte
 
 Convolution neural networks have been the state of the art in computer vision since 2012. Changes to network architectures and data processing are being made all the time that are steadily increasing the performance of image classification. This is a VGG style convolution neural network with heavy data augmentation. The network architecture is inspired by the ImageNet winners of 2014. They used 'networks of increasing depth using an architecture with very small (3x3) convolution filters' which have also been shown to do very well in many other settings since their paper and results were published. Pairing the VGG network with heavy data augmentation currently gets 83.3% on a holdout validation dataset of 6,220 images and gets [first place](https://www.kaggle.com/c/street-view-getting-started-with-julia/leaderboard) on the Kaggle leaderboards.
 
-
+{: .center}
+![chars74k](https://kaggle2.blob.core.windows.net/competitions/kaggle/3947/media/chars74k.jpg)
 
 ## Architecture
 
