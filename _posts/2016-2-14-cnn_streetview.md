@@ -47,7 +47,7 @@ The nework was trained with stochastic gradient descent (SGD) and Nesterov momen
 
 ## Data augmentation
 
-One of the drawbacks to how powerful deep learning can be is that the networks are very prone to overfitting. These data augmentation techniques are a great way to deal with that. Data augmentation allows the network to 'see' each image in different ways which in turn allows the network to have a much more flexible 'understanding' of each class of image. In this dataset, where the images are taken from the google streetview car and text on signs can come in any size and font it is especially important for the network to be flexible.
+One of the drawbacks to how powerful deep learning can be is that the networks are very prone to overfitting. These data augmentation techniques are a great way to deal with that. Data augmentation allows the network to 'see' each image in different ways which in turn allows the network to have a much more flexible 'understanding' of each class of image. In this dataset, the characters are taken from natural images so the text on signs can come in any shape and it is especially important for the network to be flexible. In my opinion the data augmentation is more important than the network architecture.
 
 Images are randomly transformed 'on the fly' while they are being prepared in each batch. The CPU will prepare each batch while the GPU will run the previous batch through the network. This ensures that the network will never see the same variation of each image twice allowing the network to better generalize.
 
@@ -63,7 +63,7 @@ On the left is the original image, on the right are possible variations that the
 {: .center}
 ![Original](http://i.imgur.com/vNkJrKi.png)![Augmented](http://i.imgur.com/0G8Khxv.gif)
 
-Here is the code for the data augmentation batch iterator. It mostly uses skimage for all of the image processing. For a great example on how to implement a similar batch iterator see Daniel Nouri's tutorial [here](http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/).
+Here is the code for the data augmentation batch iterator. It mostly uses skimage for all of the image processing. For a great example on how to implement a similar batch iterator into a python neural network see Daniel Nouri's tutorial [here](http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/).
 
 {: .code}
 ``` python
