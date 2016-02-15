@@ -62,6 +62,10 @@ Here is the code for the data augmentation batch iterator. It mostly uses skimag
 ``` python
 from skimage import transform, filters, exposure
 
+PIXELS = 64
+imageSize = PIXELS * PIXELS
+num_features = imageSize
+
 # much faster than the standard skimage.transform.warp method
 def fast_warp(img, tf, output_shape, mode='nearest'):
     return transform._warps_cy._warp_fast(img, tf.params, output_shape=output_shape, mode=mode)
