@@ -4,11 +4,13 @@ title: Using deep learning to read street signs
 published: True
 ---
 
+Show me the [code](https://github.com/FlorianMuellerklein/Chars74k_CNN)!
+
 The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-started-with-julia) competition on Kaggle uses the [Chars74k dataset](http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/) which consist of a series of characters cropped form google street view images. This dataset represents a very logical step for computer vision, trying to read signs and text in the real world. Although the Kaggle competition was set up to introduce the [Julia programming language](http://julialang.org/) it also serves as a great image classification dataset which deep learning is especially suited for. I chose to tackle this problem using python and convolution neural networks.
 
 Convolution neural networks have been the state of the art in computer vision since 2012. Changes to network architectures and data processing are being made all the time that are steadily increasing the performance of image classification. This is a VGG style convolution neural network with heavy data augmentation. The network architecture is inspired by the ImageNet winners of 2014. They used 'networks of increasing depth using an architecture with very small (3x3) convolution filters' which have also been shown to do very well in many other settings since their paper and results were published. Pairing the VGG network with heavy data augmentation currently gets 83.3% on a holdout validation dataset of 6,220 images and gets [first place](https://www.kaggle.com/c/street-view-getting-started-with-julia/leaderboard) on the Kaggle leaderboards.
 
-[code](https://github.com/FlorianMuellerklein/Chars74k_CNN)
+
 
 ## Architecture
 
