@@ -17,7 +17,7 @@ Convolution neural networks have been the state of the art in computer vision si
 The input are 64 x 64 greyscale images because color information should have no impact on recognizing letters. We are only trying to train the network on classifying certain shapes. Due to the smaller image size than those used in the VGG paper I am only using 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer, as opposed to stacking three or four convolution layers which can be done when the input images are larger. After the convolutions I am using 2 hidden layers with dropout and a 62 way softmax output.
 
 
-| __Layer Type__ | __Channels__ | __Parameters__ |
+| __Layer Type__ | __Channels__ | __Size__ |
 | :---: | :---: | :---: |
 | Input | 1 | 64x64 |
 | Convolution | 128 | 3x3 |
