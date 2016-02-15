@@ -121,13 +121,15 @@ def batch_iterator(data, y, batchsize, model):
                                           output_shape = (PIXELS, PIXELS))
 
         # use sobel edge detector filter on one quarter of the images
-        indices_sobel = np.random.choice(X_batch_aug.shape[0], X_batch_aug.shape[0] / 4, replace = False)
+        indices_sobel = np.random.choice(X_batch_aug.shape[0],
+                                         X_batch_aug.shape[0] / 4, replace = False)
         for k in indices_sobel:
             img = X_batch_aug[k][0]
             X_batch_aug[k][0] = filters.sobel(img)
 
         # invert half of the images
-        indices_invert = np.random.choice(X_batch_aug.shape[0], X_batch_aug.shape[0] / 2, replace = False)
+        indices_invert = np.random.choice(X_batch_aug.shape[0],
+                                          X_batch_aug.shape[0] / 2, replace = False)
         for l in indices_invert:
             img = X_batch_aug[l][0]
             X_batch_aug[l][0] = np.absolute(img - np.amax(img))
