@@ -88,17 +88,18 @@ num_features = imageSize
 
 # much faster than the standard skimage.transform.warp method
 def fast_warp(img, tf, output_shape, mode='nearest'):
-    return transform._warps_cy._warp_fast(img, tf.params, output_shape=output_shape, mode=mode)
+    return transform._warps_cy._warp_fast(img, tf.params,
+                                          output_shape=output_shape, mode=mode)
 
 def batch_iterator(data, y, batchsize, model):
     '''
     Data augmentation batch iterator for feeding images into CNN.
-    This example will randomly rotate all images in a given batch between -10 and 10 degrees
-    and to random translations between -10 and 10 pixels in all directions.
-    Random zooms between 1 and 1.3.
-    Random shearing between -25 and 25 degrees.
-    Randomly applies sobel edge detector to 1/4th of the images in each batch.
-    Randomly inverts 1/2 of the images in each batch.
+    rotate all images in a given batch between -10 and 10 degrees
+    random translations between -10 and 10 pixels in all directions.
+    random zooms between 1 and 1.3.
+    random shearing between -25 and 25 degrees.
+    randomly applies sobel edge detector to 1/4th of the images in each batch.
+    randomly inverts 1/2 of the images in each batch.
     '''
 
     n_samples = data.shape[0]
@@ -109,7 +110,8 @@ def batch_iterator(data, y, batchsize, model):
         y_batch = y[sl]
 
         # set empty copy to hold augmented images so that we don't overwrite
-        X_batch_aug = np.empty(shape = (X_batch.shape[0], 1, PIXELS, PIXELS), dtype = 'float32')
+        X_batch_aug = np.empty(shape = (X_batch.shape[0], 1, PIXELS, PIXELS),
+                               dtype = 'float32')
 
         # random rotations betweein -10 and 10 degrees
         dorotate = randint(-10,10)
