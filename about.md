@@ -8,4 +8,4 @@ My name is Florian Muellerklein and I am a graduate student in statistics at the
 
 ### Contact me!
 
-Florian: [fmuellerklein@gmail.com](mailto:fmuellerklein@gmail.com)
+[fmuellerklein@gmail.com](mailto:fmuellerklein@gmail.com)
