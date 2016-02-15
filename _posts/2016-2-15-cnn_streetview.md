@@ -21,9 +21,11 @@ Very little pre-processing was done to the images. The power and flexibility of 
 
 However, the images initially vary in size a lot. Some of the smaller images are 14 by 29 pixels and some of the larger ones can be as big as 178 by 197 pixels. I simply rescaled all of the images to 64 by 64 pixels with [Imagemagick](http://www.imagemagick.org/script/index.php). Although this approach will not preserve the scale of many of the images, it's a sort of a trade off between not losing information in the larger images and preserving the smaller images by scaling them up.
 
+Additionally, the images were all converted to grayscale because the color information should have no impact on the networks ability to recognize letter shapes. So the final input to the network will be 64 by 64 pixel images with only one grey channel.
+
 ## Architecture
 
-The input are 64 by 64 greyscale images because color information should have no impact on recognizing letters. We are only trying to train the network on classifying certain shapes. Due to the smaller image size than those used in the VGG paper I am only using 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer, as opposed to stacking three or four convolution layers which can be done when the input images are larger. After the convolutions I am using 2 hidden layers with dropout and a 62 way softmax output.
+I am using 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. After the convolution layers I am using 2 hidden layers with dropout and a 62 way softmax output.
 
 
 | __Layer Type__ | __Channels__ | __Size__ |
@@ -57,7 +59,7 @@ The network was trained with stochastic gradient descent (SGD) and Nesterov mome
 
 ## Data augmentation
 
-One of the drawbacks to how powerful deep learning can be is that the networks are very prone to overfitting. These data augmentation techniques are a great way to deal with that. Data augmentation allows the network to 'see' each image in different ways which in turn allows the network to have a much more flexible 'understanding' of each class of image. In this dataset, the characters are taken from natural images so the text on signs can come in any shape and it is especially important for the network to be flexible. In my opinion the data augmentation is more important than the network architecture.
+One of the drawbacks to how powerful deep learning can be is that the networks are very prone to overfitting. These data augmentation techniques are a great way to deal with that. Data augmentation allows the network to see each image in different ways which in turn allows the network to have a much more flexible understanding of each class of image. In this dataset, the characters are taken from natural images so the text on signs can come in any shape and it is especially important for the network to be flexible. In my opinion the data augmentation is more important than the network architecture.
 
 Images are randomly transformed 'on the fly' while they are being prepared in each batch. The CPU will prepare each batch while the GPU will run the previous batch through the network. This ensures that the network will never see the same variation of each image twice allowing the network to better generalize.
 
