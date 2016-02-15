@@ -59,6 +59,7 @@ On the left is the original image, on the right are possible variations that the
 
 Here is the code for the data augmentation batch iterator. It mostly uses skimage for all of the image processing. For a great example on how to implement a similar batch iterator see Daniel Nouri's tutorial [here](http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/).
 
+{: .code}
 ``` python
 from skimage import transform, filters, exposure
 
