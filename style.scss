@@ -134,14 +134,10 @@ img {
 /* To center images */
 .center {
     text-align: center;
-}
-
-.image-caption {
     color: $grey-color;
     margin-top: $spacing-unit / 3;
     font-size: 70%;
 }
-
 
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
