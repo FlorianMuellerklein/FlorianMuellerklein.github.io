@@ -6,22 +6,20 @@ published: True
 
 Show me the [code](https://github.com/FlorianMuellerklein/Chars74k_CNN)!
 
-The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-started-with-julia) competition on Kaggle uses a subset of the [Chars74k dataset](http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/) which consist of a series of characters cropped from natural images. This dataset represents a very logical step for computer vision, trying to read text in the real world. Although the Kaggle competition was set up to introduce the [Julia programming language](http://julialang.org/) it also serves as a great image classification dataset which deep learning is well suited for. I chose to tackle this problem using python and convolution neural networks.
+The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-started-with-julia) competition on Kaggle uses a subset of the [Chars74k dataset](http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/) which consist of a series of characters cropped from natural images. Although the Kaggle competition was set up to introduce the [Julia programming language](http://julialang.org/) it also serves as a great image classification dataset which deep learning is well suited for. I chose to tackle this problem using python and convolution neural networks.
 
 {: .center}
 ![chars74k](https://kaggle2.blob.core.windows.net/competitions/kaggle/3947/media/chars74k.jpg)
 
 <p style="text-align:center; font-size:75%; font-style: italic;">Examples of images, taken from the Kaggle and the Chars74k website</p>
 
-Convolution neural networks have been the top performers in computer vision since 2012. Changes to network architecture and data processing are being made all the time that are steadily increasing the performance of image classification. This network is inspired by the ImageNet winners of 2014. It is a [VGG](http://arxiv.org/abs/1409.1556) style convolution neural network with heavy data augmentation. They used 'networks of increasing depth using an architecture with very small (3x3) convolution filters'. On this dataset, pairing the VGG-style network with heavy data augmentation currently gets 83.3% on a holdout validation dataset of 6,220 images and [first place](https://www.kaggle.com/c/street-view-getting-started-with-julia/leaderboard) on the Kaggle leaderboards.
+This network is a [VGG](http://arxiv.org/abs/1409.1556) style convolution neural network with heavy data augmentation. It gets 83.3% on a holdout validation dataset of 6,220 images and [first place](https://www.kaggle.com/c/street-view-getting-started-with-julia/leaderboard) on the Kaggle leaderboards.
 
 ## Image pre-processing
 
-Very little pre-processing was done to the images. The power and flexibility of deep learning comes from the algorithm doing it's own 'feature engineering' with raw data.
+Very little pre-processing was done to the images. But, the images initially vary in size. Some of the smaller images are 14 by 29 pixels and some of the larger ones can be as big as 178 by 197 pixels. To deal with this, I simply rescaled all of the images to 64 by 64 pixels with [Imagemagick](http://www.imagemagick.org/script/index.php). Although this approach will not preserve the scale of many of the images, it's a trade off between keeping information inherent to larger images and preserving the smaller images by scaling them up.
 
-However, the images initially vary in size a lot. Some of the smaller images are 14 by 29 pixels and some of the larger ones can be as big as 178 by 197 pixels. I simply rescaled all of the images to 64 by 64 pixels with [Imagemagick](http://www.imagemagick.org/script/index.php). Although this approach will not preserve the scale of many of the images, it's a sort of a trade off between not losing information in the larger images and preserving the smaller images by scaling them up.
-
-Additionally, the images were all converted to grayscale because the color information should have no impact on the networks ability to recognize letter shapes. So the final input to the network will be 64 by 64 pixel images with only one grey channel.
+The images were all converted to grayscale because the color information should have no impact on recognizing the letter shapes. So the final input to the network will be 64 by 64 pixel images with only one grey channel.
 
 ## Architecture
 
@@ -59,7 +57,7 @@ The network was trained with stochastic gradient descent (SGD) and Nesterov mome
 
 ## Data augmentation
 
-One of the drawbacks to how powerful deep learning can be is that the networks are very prone to overfitting. These data augmentation techniques are a great way to deal with that. Data augmentation allows the network to see each image in different ways which in turn allows the network to have a much more flexible understanding of each class of image. In this dataset, the characters are taken from natural images so the text on signs can come in any shape and it is especially important for the network to be flexible. In my opinion the data augmentation is more important than the network architecture.
+Data augmentation is done to artificially increase the size of the dataset. Various affine transformations are done to slightly perturb each image so that the network will receive a slightly different variation of each image on every iteration.
 
 Images are randomly transformed 'on the fly' while they are being prepared in each batch. The CPU will prepare each batch while the GPU will run the previous batch through the network. This ensures that the network will never see the same variation of each image twice allowing the network to better generalize.
 
