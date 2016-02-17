@@ -6,7 +6,7 @@ published: True
 
 Show me the [code](https://github.com/FlorianMuellerklein/Chars74k_CNN)!
 
-The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-started-with-julia) competition on Kaggle uses a subset of the [Chars74k dataset](http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/) which consist of a series of characters cropped from natural images. Although the Kaggle competition was set up to introduce the [Julia programming language](http://julialang.org/) it also serves as a great image classification dataset which deep learning is well suited for. I chose to tackle this problem using python and convolution neural networks.
+The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-started-with-julia) competition on Kaggle uses a subset of the [Chars74k dataset](http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/) which consist of a series of characters cropped from natural images. Although the Kaggle competition was set up to introduce the [Julia programming language](http://julialang.org/) it also serves as a great image classification dataset. I chose to tackle this problem using python and convolution neural networks.
 
 {: .center}
 ![chars74k](https://kaggle2.blob.core.windows.net/competitions/kaggle/3947/media/chars74k.jpg)
