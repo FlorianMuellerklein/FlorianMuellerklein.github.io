@@ -57,7 +57,7 @@ The network was trained with stochastic gradient descent (SGD) and Nesterov mome
 
 ## Data augmentation
 
-Data augmentation is done to artificially increase the size of the dataset. Various affine transformations are done to slightly perturb each image so that the network will receive a different variation of each image on every iteration.
+Data augmentation is done to artificially increase the size of the dataset. Various affine transformations are applied to slightly perturb each image so that the network will receive a different variation of each image on every iteration.
 
 * Random rotations between -10 and 10 degrees.
 * Random translation between -10 and 10 pixels in any direction.
