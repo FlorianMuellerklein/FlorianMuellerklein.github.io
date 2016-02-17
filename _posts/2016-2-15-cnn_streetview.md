@@ -13,13 +13,13 @@ The [First Steps with Julia](https://www.kaggle.com/c/street-view-getting-starte
 
 <p style="text-align:center; font-size:75%; font-style: italic;">Examples of images, taken from the Kaggle and the Chars74k website</p>
 
-This network is a [VGG](http://arxiv.org/abs/1409.1556) style convolution neural network with heavy data augmentation. It gets 83.3% on a holdout validation dataset of 6,220 images and [first place](https://www.kaggle.com/c/street-view-getting-started-with-julia/leaderboard) on the Kaggle leaderboards.
+This is a [VGG](http://arxiv.org/abs/1409.1556) style convolution neural network with heavy data augmentation. It gets 83.3% on a holdout validation dataset of 6,220 images and [first place](https://www.kaggle.com/c/street-view-getting-started-with-julia/leaderboard) on the Kaggle leaderboards.
 
 ## Image pre-processing
 
-Very little pre-processing was done to the images. But, the images initially vary in size. Some of the smaller images are 14 by 29 pixels and some of the larger ones can be as big as 178 by 197 pixels. To deal with this, I simply rescaled all of the images to 64 by 64 pixels with [Imagemagick](http://www.imagemagick.org/script/index.php). Although this approach will not preserve the scale of many of the images, it's a trade off between keeping information inherent to larger images and preserving the smaller images by scaling them up.
+Very little pre-processing was done to the images except for resizing. Initially, some of the smaller images are 14 by 29 pixels and some of the larger ones can be as big as 178 by 197 pixels. To deal with this, I simply rescaled all of the images to 64 by 64 pixels with [Imagemagick](http://www.imagemagick.org/script/index.php).
 
-The images were all converted to grayscale because the color information should have no impact on recognizing the letter shapes. So the final input to the network will be 64 by 64 pixel images with only one grey channel.
+The images were all converted to grayscale because the color information should have no impact on classifying letter shapes. The final inputs to the network were 64 by 64 pixel images with only one grey channel.
 
 ## Architecture
 
@@ -57,9 +57,7 @@ The network was trained with stochastic gradient descent (SGD) and Nesterov mome
 
 ## Data augmentation
 
-Data augmentation is done to artificially increase the size of the dataset. Various affine transformations are done to slightly perturb each image so that the network will receive a slightly different variation of each image on every iteration.
-
-Images are randomly transformed 'on the fly' while they are being prepared in each batch. The CPU will prepare each batch while the GPU will run the previous batch through the network. This ensures that the network will never see the same variation of each image twice allowing the network to better generalize.
+Data augmentation is done to artificially increase the size of the dataset. Various affine transformations are done to slightly perturb each image so that the network will receive a different variation of each image on every iteration.
 
 * Random rotations between -10 and 10 degrees.
 * Random translation between -10 and 10 pixels in any direction.
