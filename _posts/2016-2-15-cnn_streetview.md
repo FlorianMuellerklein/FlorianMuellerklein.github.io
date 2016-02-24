@@ -50,7 +50,7 @@ I am using 6 convolution layers with filter size 3x3 and ReLU activations. Max p
 The network was trained with stochastic gradient descent (SGD) and Nesterov momentum fixed at 0.9. Training was done in 300 iterations with an initial learning rate of 0.03, after 250 epochs the learning rate was dropped to 0.003 and then dropped again to 0.0003 after 275 epochs. This allowed the network to fine-tune itself with smaller updates once the classification accuracy got very high.
 
 {: .center}
-![training_plot](http://i.imgur.com/nFy2C3P.png)
+![training_plot](http://i.imgur.com/HYICPFJ.png)
 
 <p style="text-align:center; font-size:75%; font-style: italic;">Training plot showing categorical cross entropy and percent correct on validation set</p>
 
