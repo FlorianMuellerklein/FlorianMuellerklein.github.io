@@ -23,7 +23,7 @@ The images were all converted to grayscale because the color information should 
 
 ## Architecture
 
-I am using 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. After the convolution layers I am using 2 hidden layers with dropout and a 62 way softmax output. The convolution and fully connected layers were initialized with the method described in He et al 2014 and the final softmax layer was initialized with the method described in Glorot and Bengio 2010.
+I am using 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. After the convolution layers I am using 2 hidden layers with dropout and a 62 way softmax output. The convolution and fully connected layers were initialized with the method described in He et al. (2015) and the final softmax layer was initialized with the method described in Glorot and Bengio (2010).
 
 
 | __Layer Type__ | __Channels__ | __Size__ |
@@ -169,5 +169,5 @@ def batch_iterator(data, y, batchsize, model):
 * Ren Wu, Shengen Yan, Hi Shan, Qingqing Dang, Gang Sun, "Deep Image: Scaling up Image Recognition", [link](http://arxiv.org/vc/arxiv/papers/1501/1501.02876v1.pdf)
 * Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton, "ImageNet Classification with Deep Convolutional Neural Networks", [link](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks)
 * Sander Dieleman, "Classifying plankton with deep neural networks", [link](http://benanne.github.io/2015/03/17/plankton.html)
-
+* Kaiming He, "Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification", [link](http://arxiv.org/pdf/1502.01852v1.pdf)
 * Xavier Glorot, Yoshua Bengio, "Understanding the difficulty of training deep feedforward neural networks", [link](http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf)
