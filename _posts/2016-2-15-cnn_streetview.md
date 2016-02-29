@@ -23,7 +23,7 @@ The images were all converted to grayscale because the color information should 
 
 ## Architecture
 
-I am using 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. After the convolution layers I am using 2 hidden layers with dropout and a 62 way softmax output.
+I am using 6 convolution layers with filter size 3x3 and ReLU activations. Max pooling layers after every other convolution layer. After the convolution layers I am using 2 hidden layers with dropout and a 62 way softmax output. The convolution and fully connected layers were initialized with the method described in He et al 2014 and the final softmax layer was initialized with the method described in Glorot and Bengio 2010.
 
 
 | __Layer Type__ | __Channels__ | __Size__ |
@@ -37,20 +37,21 @@ I am using 6 convolution layers with filter size 3x3 and ReLU activations. Max p
 | Max pool | - | 2x2 |
 | Convolution| 512 | 3x3 |
 | Convolution | 512 | 3x3 |
+| Convolution | 512 | 3x3 |
 | Max pool | - | 2x2 |
 | Fully connected | 2048 | - |
-| Dropout | 2048 | 0.5 |
+| Dropout | - | 0.5 |
 | Fully connected | 2048 | - |
-| Dropout | 2048 | 0.5 |
+| Dropout | - | 0.5 |
 | Softmax | 62 | - |
 
 
 ## Training Algorithm
 
-The network was trained with stochastic gradient descent (SGD) and Nesterov momentum fixed at 0.9. Training was done in 300 iterations with an initial learning rate of 0.03, after 250 epochs the learning rate was dropped to 0.003 and then dropped again to 0.0003 after 275 epochs. This allowed the network to fine-tune itself with smaller updates once the classification accuracy got very high.
+The network was trained with stochastic gradient descent (SGD) and Nesterov momentum fixed at 0.9. Training was done in 300 iterations with an initial learning rate of 0.03, after 225 epochs the learning rate was dropped to 0.003 and then dropped again to 0.0003 after 275 epochs. This allowed the network to fine-tune itself with smaller updates once the classification accuracy got very high.
 
 {: .center}
-![training_plot](http://i.imgur.com/HYICPFJ.png)
+![training_plot](http://i.imgur.com/ZcczVct.png)
 
 <p style="text-align:center; font-size:75%; font-style: italic;">Training plot showing categorical cross entropy and percent correct on validation set</p>
 
@@ -168,3 +169,5 @@ def batch_iterator(data, y, batchsize, model):
 * Ren Wu, Shengen Yan, Hi Shan, Qingqing Dang, Gang Sun, "Deep Image: Scaling up Image Recognition", [link](http://arxiv.org/vc/arxiv/papers/1501/1501.02876v1.pdf)
 * Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton, "ImageNet Classification with Deep Convolutional Neural Networks", [link](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks)
 * Sander Dieleman, "Classifying plankton with deep neural networks", [link](http://benanne.github.io/2015/03/17/plankton.html)
+
+* Xavier Glorot, Yoshua Bengio, "Understanding the difficulty of training deep feedforward neural networks", [link](http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf)
