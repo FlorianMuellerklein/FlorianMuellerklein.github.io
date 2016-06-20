@@ -53,7 +53,7 @@ The wide-ResNet simply adds another multiplier *k* that increases the number of 
 
 {: .center}
 ![WideResNet](http://i.imgur.com/3b0fw7b.png)
-<p style="text-align:center; font-size:75%; font-style: italic;">An example of the wide ResNet, it's basically a Preactivation ResNet with increased filters count in the residual blocks and optional dropout.</p>
+<p style="text-align:center; font-size:75%; font-style: italic;">An example of the wide ResNet, it's basically a Preactivation ResNet with an increased filter count in the residual blocks and an optional dropout between the two convolution layers.</p>
 
 ## Training and Testing
 
