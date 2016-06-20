@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reproducing CIFAR-10 Results from Deep and Wide Preactivation Residual Networks
+title: Reproducing CIFAR-10 results from deep and wide preactivation residual networks
 published: True
 ---
 
