@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reproducing CIFAR-10 Results from Deep and Wide Preactivation Residual Networks
-published: False
+published: True
 ---
 
 In 2015 [Deep Residual Networks](https://arxiv.org/abs/1512.03385) were the winning solution to ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation, and introduced a way to train extremely deep neural networks of up to 1000 or more layers. The main idea is that Residual Networks ["reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions."](https://arxiv.org/abs/1512.03385) The basic idea is that the building blocks of these networks are a combination of convolution layers and skip connections. We will refer to these building blocks as residual blocks. The residual blocks are basically two branches that come together with an element-wise addition. One branch of the residual block is a stack of two convolution layers and the other is an identity function.
@@ -75,11 +75,10 @@ Results are presented as classification error percent.
 | ResNet-110 | 6.37 | 6.38 |
 | ResNet-164 | 5.46 | 5.66 |
 | WResNet-n2-k4<br>with dropout 0.3 | 5.55 | 5.41 |
-| WResNet-n2-k4<br>no dropout | 5.37 |  |
 
 <p style="text-align:center; font-size:75%; font-style: italic;">All results are presented from the first and only training run. I did not run each network multiple times and choose the best score.</p>
 
-I was able to reproduce the results of the two papers within a reasonable range. However since I used different preprocessing, training and regularization for the wide residual networks I did not expect them to match. The trends held, wide residual networks still outperformed the normal preactivation networks. Interestingly dropout seemed to have more benefit here than in the original wide residual network paper. Perhaps due to the less aggressive L2 (0.0001 vs 0.0005) used here the regularization from dropout could have a more significant benefit.
+I was able to reproduce the results of the two papers within a reasonable range. The trends held, the wide residual network still outperformed the normal preactivation networks even with different preprocessing and regularization parameters.
 
 ### Source
 Link to the [code](https://github.com/FlorianMuellerklein/Identity-Mapping-ResNet-Lasagne).
