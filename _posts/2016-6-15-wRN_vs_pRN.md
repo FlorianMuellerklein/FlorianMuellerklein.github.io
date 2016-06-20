@@ -8,7 +8,7 @@ In 2015, [Deep Residual Networks](https://arxiv.org/abs/1512.03385) were the win
 
 {: .center}
 ![Residual Block](https://qph.is.quoracdn.net/main-qimg-b1fcbef975924b2ec4ad3a851e9f3934?convert_to_webp=true)
-<p style="text-align:center; font-size:75%; font-style: italic;">Diagram of the residual block taken from [1](https://arxiv.org/abs/1512.03385).</p>
+<p style="text-align:center; font-size:75%; font-style: italic;">Diagram of the residual block.</p>
 
 Just like with normal convolution layers, these residual blocks can be layered to create networks of increasing depth. Below is the basic structure of the CIFAR-10 residual network [1](https://arxiv.org/abs/1512.03385)[2](https://arxiv.org/abs/1603.05027), with the depth being controlled by a multiplier *n* which dictates how many residual blocks to insert between each downsampling layer. Downsampling is done by increasing the stride of the first convolution layer in the residual block. Whenever the number of filters are increased the very first convolution layer with an increased number of filters will do the downsampling.
 
