@@ -66,6 +66,8 @@ the per-pixel mean subtracted"[[1]](https://arxiv.org/abs/1512.03385) as their n
 
 **Training and regularization:** The networks were trained with 200 epochs (full passes through training dataset) with stochastic gradient descent, nesterov momentum of 0.9, and cross-entropy loss. The initial learning rate was set to 0.01 to warm up the network and was increased to 0.1 at epoch 10. The learning rate was adjusted by the following schedule {0:0.01, 10: 0.1, 80: 0.01, 120: 0.001}. L2 regularization of 0.0001 was used and not 0.0005 like in [[3]](https://arxiv.org/abs/1605.07146).
 
+**Dropout:** Dropout of 0.3 was used in the wide residual network.
+
 # Results
 
 Results are presented as classification error percent.
@@ -74,7 +76,7 @@ Results are presented as classification error percent.
 | :---------:|:---------:|:---------: |
 | ResNet-110 | 6.37 | 6.38 |
 | ResNet-164 | 5.46 | 5.66 |
-| WResNet-n2-k4<br>with dropout 0.3 | 5.55 | 5.41 |
+| WResNet-n2-k4| 5.55 | 5.41 |
 
 <p style="text-align:center; font-size:75%; font-style: italic;">All results are presented from the first and only training run. I did not run each network multiple times and choose the best score.</p>
 
