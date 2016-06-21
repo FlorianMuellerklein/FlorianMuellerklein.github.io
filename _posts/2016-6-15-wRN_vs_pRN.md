@@ -38,7 +38,7 @@ This [reproduction](https://github.com/FlorianMuellerklein/Identity-Mapping-ResN
 ## Wide Residual Networks
 
 Those preactivation residual networks are very deep but also very thin, so [Wide Residual Networks](https://arxiv.org/abs/1605.07146) makes the network much more shallow but also much wider. The justification is to combat the observation that with normal residual networks we get diminishing returns in performance by increasing the depth. The authors introduce "wider deep residual networks that significantly
-improve over [2](https://arxiv.org/abs/1603.05027), having 50 times less layers and being more than 2 times faster." [3](https://arxiv.org/abs/1605.07146) Their 16-layer wide residual Network performs as well as a thin 1001-layer preactivation residual network. The authors also claim that the wider networks are much more efficient on a GPU than the deeper thin networks [3](https://arxiv.org/abs/1605.07146). The speed was not evaluated here.
+improve over [2](https://arxiv.org/abs/1603.05027), having 50 times less layers and being more than 2 times faster." [3](https://arxiv.org/abs/1605.07146) Their 16-layer wide residual Network performs as well as a thin 1001-layer preactivation residual network. The authors also claim that the wider networks are much more efficient on a GPU than the deeper thin networks [3](https://arxiv.org/abs/1605.07146).
 
 {: .center}
 ![WideResNet](http://i.imgur.com/3b0fw7b.png)
@@ -82,6 +82,14 @@ Results are presented as classification error percent.
 <p style="text-align:center; font-size:75%; font-style: italic;">All results are presented from the first and only training run. I did not run each network multiple times and choose the best score.</p>
 
 I was able to reproduce the results of the two papers within a reasonable range. The trends held, the wide residual network still outperformed the normal preactivation networks even with different preprocessing and regularization parameters.
+
+Finally, the speed of the networks may be interesting to some users. Wide residual networks do seem to allow for more parameters with a minimal cost in training time.
+
+| __ResNet Type__ | __Params__ | __Sec/Epoch__ |
+| :---------:|:---------:|:---------: |
+| ResNet-110 | 1.7M | 90 |
+| ResNet-164 | 1.7M | 183 |
+| WResNet-n2-k4| 2.7M | 113 |
 
 ### Source
 Link to the [code](https://github.com/FlorianMuellerklein/Identity-Mapping-ResNet-Lasagne).
