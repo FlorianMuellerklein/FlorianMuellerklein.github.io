@@ -40,6 +40,10 @@ This [reproduction](https://github.com/FlorianMuellerklein/Identity-Mapping-ResN
 Those preactivation residual networks are very deep but also very thin, so [Wide Residual Networks](https://arxiv.org/abs/1605.07146) makes the network much more shallow but also much wider. The justification is to combat the observation that with normal residual networks we get diminishing returns in performance by increasing the depth. The authors introduce "wider deep residual networks that significantly
 improve over [2](https://arxiv.org/abs/1603.05027), having 50 times less layers and being more than 2 times faster." [3](https://arxiv.org/abs/1605.07146) Their 16-layer wide residual Network performs as well as a thin 1001-layer preactivation residual network. The authors also claim that the wider networks are much more efficient on a GPU than the deeper thin networks [3](https://arxiv.org/abs/1605.07146). The speed was not evaluated here.
 
+{: .center}
+![WideResNet](http://i.imgur.com/3b0fw7b.png)
+<p style="text-align:center; font-size:75%; font-style: italic;">An example of the wide ResNet, it's basically a Preactivation ResNet with an increased filter count in the residual blocks and an optional dropout between the two convolution layers.</p>
+
 The wide-ResNet simply adds another multiplier *k* that increases the number of filters used in each residual block. The idea of adding dropout in between the two convolution layers is also introduced with the wider residual blocks. The basic structure can be seen below.
 
 | Group | Size | Multiplier |
@@ -51,9 +55,6 @@ The wide-ResNet simply adds another multiplier *k* that increases the number of 
 | Avg-Pool | 8x8 | - |
 | Softmax  | 10 | - |
 
-{: .center}
-![WideResNet](http://i.imgur.com/3b0fw7b.png)
-<p style="text-align:center; font-size:75%; font-style: italic;">An example of the wide ResNet, it's basically a Preactivation ResNet with an increased filter count in the residual blocks and an optional dropout between the two convolution layers.</p>
 
 ## Training and Testing
 
