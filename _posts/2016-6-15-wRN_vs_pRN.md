@@ -79,7 +79,7 @@ the per-pixel mean subtracted"[[1](https://arxiv.org/abs/1512.03385)] as their n
 
 **Dropout:** Dropout of 0.3 was used in the wide residual network. [[3](https://arxiv.org/abs/1605.07146)]
 
-**Hardware and software:** This reproduction was done using the Theano and Lasagne software frameworks for mathematical computation and neural networks. [[4](https://arxiv.org/abs/1605.02688)][[5](http://lasagne.readthedocs.io/en/latest/index.html)] A Nvidia GTX 980 GPU was used to train and evaluate the networks. Although the impact should be insignificant it is worth noting that the original papers were both done with the Torch software package and a GPU with the same underlying architecture but more memory, which allowed for larger batch sizes.
+**Hardware and software:** This reproduction was done using the Theano and Lasagne software frameworks for mathematical computation and neural networks.[[4](https://arxiv.org/abs/1605.02688)][[5](http://lasagne.readthedocs.io/en/latest/index.html)] A Nvidia GTX 980 GPU was used to train and evaluate the networks. Although the impact should be insignificant it is worth noting that the original papers were both done with the Torch software package and a GPU with the same underlying architecture but more memory.
 
 # Results
 
