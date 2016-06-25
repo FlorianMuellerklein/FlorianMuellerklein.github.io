@@ -83,7 +83,7 @@ the per-pixel mean subtracted"[[1](https://arxiv.org/abs/1512.03385)] as their n
 
 # Results
 
-Results are presented as classification error percent.
+I was able to reproduce the results of the two papers within a reasonable range. The trends held, the wide residual network still outperformed the normal preactivation networks even with different preprocessing and regularization parameters. Results are presented as classification error percent.
 
 | __ResNet Type__ | __Original Paper__ | __Test Results__ |
 | :---------:|:---------:|:---------: |
@@ -92,8 +92,6 @@ Results are presented as classification error percent.
 | WResNet-n2-k4| 5.55 | 5.41 |
 
 <p style="text-align:center; font-size:75%; font-style: italic;">All results are presented from the first and only training run. I did not run each network multiple times and choose the best score.</p>
-
-I was able to reproduce the results of the two papers within a reasonable range. The trends held, the wide residual network still outperformed the normal preactivation networks even with different preprocessing and regularization parameters.
 
 Finally, the speed of the networks may be interesting to some users. Wide residual networks do seem to allow for more parameters with a minimal cost in training time.
 
