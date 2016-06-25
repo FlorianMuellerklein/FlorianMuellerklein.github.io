@@ -106,6 +106,9 @@ Link to the [code](https://github.com/FlorianMuellerklein/Identity-Mapping-ResNe
 
 ### References
 
-* 1 Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, "Deep Residual Networks for Image Recognition", [link](https://arxiv.org/abs/1512.03385)
-* 2 Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, "Identity Mappings in Deep Residual Networks", [link](https://arxiv.org/abs/1603.05027)
-* 3 Sergey Zagoruyko, Nikos Komodakis, "Wide Residual Neural Networks", [link](https://arxiv.org/abs/1605.07146)
+* [1] Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, "Deep Residual Networks for Image Recognition", [link](https://arxiv.org/abs/1512.03385)
+* [2] Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, "Identity Mappings in Deep Residual Networks", [link](https://arxiv.org/abs/1603.05027)
+* [3] Sergey Zagoruyko, Nikos Komodakis, "Wide Residual Neural Networks", [link](https://arxiv.org/abs/1605.07146)
+* [4] The Theano Development Team, et al. "Theano: A Python framework for fast computation of mathematical expressions." arXiv preprint arXiv:1605.02688 (2016). [link](https://arxiv.org/abs/1605.02688)
+* [5] Dieleman, Sander, et al. "Lasagne: First Release." Zenodo: Geneva, Switzerland (2015). [link](http://lasagne.readthedocs.io/en/latest/index.html)
+* [6] Collobert, Ronan, Koray Kavukcuoglu, and Clément Farabet. "Torch7: A matlab-like environment for machine learning." BigLearn, NIPS Workshop. No. EPFL-CONF-192376. (2011). [link](http://cs.nyu.edu/~koray/files/2011_torch7_nipsw.pdf)
