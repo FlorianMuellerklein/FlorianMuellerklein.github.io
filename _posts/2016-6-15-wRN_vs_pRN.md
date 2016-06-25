@@ -28,9 +28,9 @@ In addition to the stacked 3x3 convolution architecture, "Deep Residual Learning
 | Group | Size | Multiplier |
 | ------|:------:|:----------:|
 | Conv1 | [3x3, 16] | - |
-| Conv2 | [1x1, 16]<br>[3x3, 16]<br>[1x1, 64] | *n* |
-| Conv3 | [1x1, 32]<br>[3x3, 32]<br>[1x1, 128] | *n* |
-| Conv4 | [1x1, 64]<br>[3x3, 64]<br>[1x1, 256] | *n* |
+| <br>Conv2 | [1x1, 16]<br>[3x3, 16]<br>[1x1, 64] | <br>*n* |
+| <br>Conv3 | [1x1, 32]<br>[3x3, 32]<br>[1x1, 128] | <br>*n* |
+| <br>Conv4 | [1x1, 64]<br>[3x3, 64]<br>[1x1, 256] | <br>*n* |
 | Avg-Pool | 8x8 | - |
 | Softmax  | 10 | - |
 
