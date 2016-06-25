@@ -40,7 +40,7 @@ This [reproduction](https://github.com/FlorianMuellerklein/Identity-Mapping-ResN
 
 ## Preactivation Residual Blocks
 
-"Identity Mappings in Deep Residual Networks" [[2](https://arxiv.org/abs/1603.05027)] introduces the preactivation architecture which changes the order of the batch normalizations and nonlinearities, creating the preactivation residual network. The original residual network contains residual blocks of: convolution -> batch normalization -> ReLU -> convolution -> batch normalization. The output of the final batch normalization then comes together with the identity function via element-wise addition. After the addition another ReLU is applied which then becomes the input to the next residual block. The preactivation architecture changes the order to: batch normalization -> ReLU -> convolution -> batch normalization -> ReLU -> convolution. Again, the output of that final convolution is added to the identity function to create the input to the next residual block.
+"Identity Mappings in Deep Residual Networks" [[2](https://arxiv.org/abs/1603.05027)] introduces the preactivation architecture which changes the order of the batch normalizations and nonlinearities, creating the preactivation residual network. The benefit of the new preactivation residual block is in optimization ease and regularization, resulting in much better performance across all benchmark datasets.[[2](https://arxiv.org/abs/1603.05027)] The changes from the original residual block to the preactivation residual block are best viewed in the figure below. 
 
 {: .center}
 ![PreResNet](https://qiita-image-store.s3.amazonaws.com/0/100523/a156a5c2-026b-de55-a6fb-e4fa1772b42c.png)
