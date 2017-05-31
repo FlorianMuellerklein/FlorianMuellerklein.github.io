@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Generating Death Metal Band names with Recurrent Neural Networks
-published: False
+published: True
 ---
 
 For anyone familiar with Death Metal you know it's a genre known for it's extremes. The music, the names, the subject matter - it's all extreme! I thought it would be interesting to see what a recurrent neural network would come up with asked to generate it's own death metal band names. 
