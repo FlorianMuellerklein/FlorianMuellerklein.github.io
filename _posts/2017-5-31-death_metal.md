@@ -88,7 +88,7 @@ The real reason that I did this other than to be funny is to see how easy it wou
 In PyTorch we define a forward function that explicitly controls the computation of our network. It specifies the operations that take us from the input tensor to the output tensor, in our case it will be all of the operations that create a MI-LSTM. 
 
 {: .center}
-![MI-LSTM]('../images/mi_lstm.png')
+![MI-LSTM](../images/mi_lstm.png)
 <p style="text-align:center; font-size:75%; font-style: italic;">Appendix A of "On Multiplicative Integration with Recurrent Neural Networks"</p>
 
 To turn these mathematical expressions into a PyTorch model we just have to set up the matricies and specify the computations. The resulting forward function pretty much looks identical to the mathematical notation. 
@@ -127,7 +127,7 @@ This quick experiment is based on the [char-rnn](https://karpathy.github.io/2015
 I took the list of death metal band names from the kaggle [dataset](https://www.kaggle.com/zhangjuefei/death-metal). Then trained a MI-LSTM and LSTM with 1024 hidden units on the corpus ofband names. The network was trained with [Adam](https://arxiv.org/abs/1412.6980) with an initial learning rate of 0.0005 for 3 epochs. The learning rate was scaled down by 75% at the start of epoch 2 and 3. 
 
 {: .center}
-![loss curves]('../images/milstm_vs_lstm.png')
+![loss curves](../images/milstm_vs_lstm.png)
 <p style="text-align:center; font-size:75%; font-style: italic;">Training loss curves for LSTM and MI-LSTM.</p>
 
 Both LSTM styles convereged to similar loss values. This task may have been too simple to test the benefits of MI-LSTM.
