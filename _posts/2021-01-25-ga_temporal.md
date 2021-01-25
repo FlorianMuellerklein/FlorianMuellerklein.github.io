@@ -18,9 +18,11 @@ Now that the election has ended its worth evaluating how well the model did. We 
 
 The actual election results are squarely within the expected intervals with the mean prediction for Warnock-Loeffler off by 0.5% and for Ossoff-Perdue off by 0.4%. I am happy with this outcome but really this is a testament to the quality of the polling data. 
 
+
 ## Temporal Behavior
 
-I am kicking myself for not including trend lines since the Democratic win probabilities experienced a big rally in the last week. Towards the end of the race almost all of the polls showed an advantage for the two Democratic candidates. With that amount of consistency across the polls the model was able to overcome the prior and assign Democratic wins as the most likely outcome. The models prior was set as the outcome of the Nov 3 election and the trend in the polls were enough to switch that outcome within the model.  
+
+I am kicking myself for not including trend lines since the Democratic win probabilities experienced a big rally in the last week. Towards the end of the race almost all of the polls showed an advantage for the two Democratic candidates.  
 
 {: .center}
 <img src="../images/warnock_loeffler_wp.png">
@@ -28,9 +30,8 @@ I am kicking myself for not including trend lines since the Democratic win proba
 {: .center}
 <img src="../images/ossoff_perdue_wp.png">
 
-The model was also set up to take data that was far out from the election date with much more uncertanty than polls close to the election. This allows the model to utilize even really early polling data, but not allow that early polling data to overshadow the polls taken right near election date. So if there was a shift in public opinion in the polling data like we saw the model wouldn't hang on to the previous polls too tightly. Everything worked as expected here. 
 
-What we also see is the expected vote share distributions become tighter and tighter as the election nears. The basic assumption is that if the polls are accurately capturing public sentiment then were will be less time for people to be swayed to change their minds as the polls get closer to the election date. As both political parties will be trying their hardest to sway public opinion the uncertainty is symmetric. 
+The model makes use of all the polling data but as the election date nears the model steadily decreases the amount of uncertainty applied to the polls. The basic assumption is that there will be less time for people to be swayed to change their minds as the polls get closer to the election date. As both political parties will be trying their hardest to sway public opinion the uncertainty is symmetric. So polls closer to election day have a much bigger impact on the final output compared to early polls.
 
 {: .center}
 <img src="../images/warnock_loeffler_vs.png">
@@ -38,8 +39,24 @@ What we also see is the expected vote share distributions become tighter and tig
 {: .center}
 <img src="../images/ossoff_perdue_vs.png">
 
-One critique of this approach would be that in the early stages the uncertainty results in voteshare distributions that are seemingly unlikely. There isn't a very good reason to expect vote shares for a candidate to be around 60% save for some rare event that would dramatically shift public opinion. There is some scientific sense to this approach, as the election gets closer there is less and less chance of some dramatic event of this type to take place. The final vote share distributions end up in quite a reasonable range and are very close to the actual result that we saw.
+One critique of this approach would be that in the early stages the uncertainty results in voteshare distributions that are seemingly unlikely. There isn't a very good reason to expect vote shares for a candidate to be around 60% save for some rare event that would dramatically shift public opinion. There is some scientific sense to this approach, as the election gets closer there is less and less chance of some dramatic event of this type to take place. Additionally, if the uncertainty were lower for the early polls then they would have too big of an impact on the final estimated vote share distribution. 
+
+## Learning Pollster Bias
+
+These plots were included in the original model but its worth summarizing here again. The model assumes that the true vote share is unobservable with the polls but its the main factor thats driving them and each poll is skewed by specific pollster effects. Meaning that each pollster can have some bias, whether its part of the organization or just an unlucky sample. 
+
+The model attempts to discover this true state wide voter preference by pooling the information in the polls. It will then adjust the pollster specific distribution based on this state wide distribution. Polls that are further out from election day or have smaller sample sizes are adjusted more aggressively if they are furthre out from what the model deems the "true" distribution. 
+
+{: .center}
+![WL Pollsters](../images/wl_pollster-lean.png)
+
+{: .center}
+![OP Pollsters](../images/op_pollster-lean.png)
+
+In these plots the record poll results are shown in orange and poll specific distributions are shown in gray. If the confidence bounds (uncertainty) is wider for a pollster then it is likely to have a bigger adjustmenet from its recorded results.
+
 
 ## Thoughts
+
 
 Looking at vote share and win probably individually seemingly tell vastly different stories. Once the win probabilities shifted above 60% its easy to feel that the election was in the bag for the most likely candidate. The vote share distributions however make the races appear much closer. In reality it appears that very small proportional changes in public opinion can cause big swings in win probabilities. This could certainly be a factor in the frustration and confusion the general public seems to have with election forecasting. 
