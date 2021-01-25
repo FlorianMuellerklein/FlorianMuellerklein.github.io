@@ -53,7 +53,7 @@ The model attempts to discover this true state wide voter preference by pooling 
 {: .center}
 ![OP Pollsters](../images/op_pollster-lean.png)
 
-In these plots the record poll results are shown in orange and poll specific distributions are shown in gray. If the confidence bounds (uncertainty) is wider for a pollster then it is likely to have a bigger adjustmenet from its recorded results.
+In these plots the recorded poll results are shown in orange and poll specific distributions are shown in gray. If the confidence bounds (uncertainty) is wider for a pollster then it is likely to have a bigger adjustmenet from its recorded results.
 
 ## Thoughts
 
