@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Georgia Runoff Model Evaluation
-published: False
+published: True
 ---
 
 Now that the election has ended its worth evaluating how well the model did. We are interested in both the final predictions after all polls were collected and how the model changed as new data came in. 
@@ -43,9 +43,9 @@ One critique of this approach would be that in the early stages the uncertainty 
 
 ## Learning Pollster Bias
 
-These plots were included in the original model but its worth summarizing here again. The model assumes that the true vote share is unobservable with the polls but its the main factor thats driving them and each poll is skewed by specific pollster effects. Meaning that each pollster can have some bias, whether its part of the organization or just an unlucky sample. 
+These plots were included in the original model but its worth summarizing here again. The model assumes that the true vote share is the main factor thats driving the polls and each poll is skewed by some specific pollster effects. Meaning that each pollster is measuring the true value along with some bias. 
 
-The model attempts to discover this true state wide voter preference by pooling the information in the polls. It will then adjust the pollster specific distribution based on this state wide distribution. Polls that are further out from election day or have smaller sample sizes are adjusted more aggressively if they are furthre out from what the model deems the "true" distribution. 
+The model attempts to discover this true state wide voter preference by pooling the information across all of the polls. It will then adjust the pollster specific distribution based on this estimated state wide distribution. In other words, the polls regularize the estimated true voter preference, and the estimated voter preference regularizes the pollster distributions. Polls that are further out from election day or have smaller sample sizes are adjusted more aggressively. 
 
 {: .center}
 ![WL Pollsters](../images/wl_pollster-lean.png)
@@ -55,8 +55,6 @@ The model attempts to discover this true state wide voter preference by pooling 
 
 In these plots the record poll results are shown in orange and poll specific distributions are shown in gray. If the confidence bounds (uncertainty) is wider for a pollster then it is likely to have a bigger adjustmenet from its recorded results.
 
-
 ## Thoughts
-
 
 Looking at vote share and win probably individually seemingly tell vastly different stories. Once the win probabilities shifted above 60% its easy to feel that the election was in the bag for the most likely candidate. The vote share distributions however make the races appear much closer. In reality it appears that very small proportional changes in public opinion can cause big swings in win probabilities. This could certainly be a factor in the frustration and confusion the general public seems to have with election forecasting. 
